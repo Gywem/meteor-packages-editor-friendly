@@ -2,6 +2,12 @@
   "name": "meteor",
   "version": "0.0.1",
   "scripts": {
-    "preinstall": "./initialize"
+    "build": "babel src -d dist",
+    "create-package-links": "node ./dist/create-package-links.js",
+    "postinstall": "npm run build && npm run create-package-links"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
   }
 }
