@@ -6,7 +6,7 @@
     "create-package-links": "node ./dist/create-package-links.js",
     "postinstall": "npm run build && npm run create-package-links"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1"
   }
