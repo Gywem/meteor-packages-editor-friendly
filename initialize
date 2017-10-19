@@ -1,3 +1,18 @@
 #!/bin/bash -e
 
-echo $METEOR_PACKAGE_DIRS
+function isPackageDir {
+  result=$(find "$1" -maxdepth 1 -type f -name "package.js")
+  if [[ -n $result ]]; then
+    return 0
+  fi
+  return 1
+}
+
+for d in $METEOR_PACKAGE_DIRS/*
+do
+  if [[ -d $d ]]; then
+    if isPackageDir "$d"; then
+      ln -s "$METEOR_PACKAGE_DIRS/$d" "./"
+    fi
+  fi
+done
