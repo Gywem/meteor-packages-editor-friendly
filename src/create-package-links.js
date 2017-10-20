@@ -11,7 +11,7 @@ fs.readdir(METEOR_PACKAGE_DIRS, (err, files) => {
     if (isMeteorPackage(path)) {
       const link = PWD + '/' + file;
       const shouldCreateLink = !fs.existsSync(link);
-      if (shouldCreateLink) fs.symlink(path, link);
+      if (shouldCreateLink) fs.symlinkSync(path, link);
     }
   });
 });
