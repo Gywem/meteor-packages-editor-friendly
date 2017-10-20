@@ -1,6 +1,6 @@
 {
   "name": "meteor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "build": "babel src -d dist",
     "create-package-links": "node ./dist/create-package-links.js",
